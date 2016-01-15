@@ -22,3 +22,4 @@ var Application;
         angular.module("Application").service("Application.Services.GuestService", GuestService);
     })(Services = Application.Services || (Application.Services = {}));
 })(Application || (Application = {}));
+//# sourceMappingURL=GuestService.js.map
