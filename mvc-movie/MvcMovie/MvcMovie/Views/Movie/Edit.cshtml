@@ -1,0 +1,111 @@
+﻿@model MvcMovie.Models.Movie
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    var ImgLink = Model.ImageLink;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Edit Movie</legend>
+        @Html.HiddenFor(model => model.Id)
+        <div class="col-lg-8">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Title)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Title)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ReleaseDate)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.ReleaseDate, new { @class = "form-control", @id="datetime" })
+                @Html.ValidationMessageFor(model => model.ReleaseDate)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Genre)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Genre, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Genre)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Price)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Price, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Price)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Rating)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Rating, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Rating)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Description)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Description, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Description)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.BannerLink)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.BannerLink, new { @class = "banner-link form-control" })
+                @Html.ValidationMessageFor(model => model.BannerLink)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ImageLink)
+            </div>
+            <div class="editor-field">
+                <div class="col-lg-11 nopadding">
+                    @Html.TextBoxFor(model => model.ImageLink, new { @class = "image-link form-control" })
+                    @Html.ValidationMessageFor(model => model.ImageLink)
+                </div>
+                <div class="col-lg-1 nopadding">
+                    <button class="btn btn-default smallmargin-top pull-right" value="View" type="button" onclick="loadImage()">
+                        <span class="glyphicon glyphicon-search"> </span>
+                    </button>
+                </div>
+            </div>
+            <p>
+                <button class="btn btn-default margin-top-20 btn-w70" type="submit" value="Save">Save</button>
+                <button class="btn btn-default margin-top-20 btn-w70" value="Back" onclick="location.href='@Url.Action("Index", "Movie")'">Back</button>
+            </p>
+        </div>
+        <img src="@Model.ImageLink" alt="Image" class="img-movie col-lg-4" />
+    </fieldset>
+    <script>
+      
+    </script>
+
+}
+
+<div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        function loadImage() {
+            $(".img-movie").attr('src', $(".image-link").val());
+        }
+    </script>
+
+}

@@ -1,0 +1,17 @@
+﻿@model IEnumerable<MvcMovie.Models.Movie>
+
+@foreach (var item in Model)
+{
+    <div class="content-item">
+        <div class="container-fluid boxshadow-container col-xs-2 margin-top-20 margin-right-10 margin-left-15">
+            <div class="row">
+                <img class="img-container nopadding" src=@item.ImageLink alt=@item.Id height="220" width="100%" />
+                <div class="img-text">
+                    <a href="@Url.Action("Details", "MovieClient", new { id = item.Id })">
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

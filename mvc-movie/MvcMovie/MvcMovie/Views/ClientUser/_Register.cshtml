@@ -1,0 +1,58 @@
+﻿@model MvcMovie.Models.RegisterUser
+
+@{
+
+    ViewBag.Title = "Register";
+}
+
+<div class="modal-content">
+
+    <h1 class="modal-header">Register User</h1>
+    @using (Html.BeginForm("Register", "ClientUser", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset class="modal-body">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserName)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.UserName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.UserName)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Password)
+            </div>
+            <div class="editor-field">
+                @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ConfirmPassword)
+            </div>
+            <div class="editor-field">
+                @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ConfirmPassword)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Email)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", type = "email" })
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+
+            <p class=" modal-footer">
+                <button class="btn btn-default" type="submit">Submit</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </p>
+        </fieldset>
+    }
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

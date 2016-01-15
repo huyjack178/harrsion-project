@@ -1,0 +1,33 @@
+﻿@model MvcMovie.Models.ClientUser
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<fieldset>
+    <legend>User Name: <b>@Html.DisplayFor(model => model.UserName)</b></legend>
+
+    <div class="display">
+        @Html.LabelFor(model => model.Password):
+        @Html.DisplayFor(model => model.Password)
+    </div>
+
+    <div class="display">
+        @Html.LabelFor(model => model.Role):
+        @Html.DisplayFor(model => model.Roles.First(item => item.Value == model.Role.ToString()).Text)
+    </div>
+
+    <div class="display">
+        @Html.LabelFor(model => model.Email):
+        @Html.DisplayFor(model => model.Email)
+    </div>
+    <div class="display">
+        @Html.LabelFor(model => model.RegDate):
+        @Html.DisplayFor(model => model.RegDate)
+    </div>
+</fieldset>
+<p>
+    <button class="btn btn-default btn-w70" type="submit" value="Edit" onclick="location.href='@Url.Action("Edit", "AdminUser", new { userName = Model.UserName})'">Edit</button>
+    <button class="btn btn-default btn-w70" type="button" value="Back" onclick="location.href='@Url.Action("Index", "AdminUser")'">Back</button>
+</p>

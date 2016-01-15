@@ -1,0 +1,23 @@
+﻿@model MvcMovie.Models.ClientUser
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_ClientLayout.cshtml";
+}
+
+<fieldset>
+    <legend>User Name: <b>@Html.DisplayFor(model => model.UserName)</b></legend>
+
+    <div class="display">
+        @Html.LabelFor(model => model.Password):
+        @Html.DisplayFor(model => model.Password)
+    </div>
+
+    <div class="display">
+        @Html.LabelFor(model => model.Email):
+        @Html.DisplayFor(model => model.Email)
+    </div>
+</fieldset>
+<p>
+    <button class="btn btn-default btn-w70" type="button" value="Back" onclick="location.href='@Url.Action("Index", "MovieClient")'">Back</button>
+</p>

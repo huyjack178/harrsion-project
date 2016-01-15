@@ -1,0 +1,46 @@
+﻿@model IEnumerable<MvcMovie.Models.Movie>
+
+@{
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Movie List</h2>
+
+<div class="pull-right margin-top-10">
+    <button class="btn btn-default btn-block modal-link" type="button"
+            data-toggle="modal" data-target="#createModal">
+        <span class="glyphicon glyphicon-plus"> </span>
+        Create New
+    </button>
+</div>
+
+@Html.Partial("_Search", Model)
+
+<div ng-app="myApp" ng-controller="movieCtrl">
+   @Html.Partial("_Content", Model)
+
+    <!-- Modal -->
+    <div class="modal fade" id="createModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                @Html.Partial("_Create", new MvcMovie.Models.Movie())
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteModal" role="dialog">
+        <div class="modal-dialog modal-lg text-center">
+            <div class="modal-content">
+                <div class="modal-content modal-center">
+                    <h3 class="modal-header">Are you sure you want to delete this?</h3>
+                    <p class="modal-body">
+                        <button class="btn btn-danger" type="submit" ng-click="deleteMovie()">Delete</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

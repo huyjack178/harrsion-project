@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="myApp" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+</head>
+<body ng-controller="SimpleCtrl">
+    <ul class="menu">
+    <li><a href="#/guest">guest</a></li>
+    <li><a href="#/view2">view2</a></li>
+  </ul>
+
+  <div ng-view></div>
+
+    <div class="container">
+        Name: <input type="text" ng-model="name" />
+    </div>
+
+    <ul>
+        <li ng-repeat="cust in customers | filter: name">{{cust.name}}</li>
+    </ul>
+
+</body>
+     <script src="angular.min.js"></script>
+      <script src="app.js"></script>
+  <script src="guest/guest.js"></script>
+  <script>
+        var app = angular.module('myApp', []);
+        app.controller('SimpleCtrl', function($scope){
+            $scope.customers = [
+                { name: 'a' },
+                { name: 'b' },
+                { name: 'c' }
+            ]
+        } )
+    </script>
+
+
+</html>

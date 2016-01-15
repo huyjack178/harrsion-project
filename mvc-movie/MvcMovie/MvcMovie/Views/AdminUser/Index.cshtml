@@ -1,0 +1,93 @@
+﻿@model IEnumerable<MvcMovie.Models.ClientUser>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>User List</h2>
+<div class="container-fluid">
+    <div class="row">
+        @using (Html.BeginForm("Search", "AdminUser", FormMethod.Get))
+        {
+            <div class="col-sm-4 smallpadding">
+                @Html.TextBox("userName", null, new { @class = "form-control", @placeholder = "User Name" })
+            </div>
+            <div class="col-sm-6 smallpadding">
+                <button type="submit" value="Search" class="btn btn-default ">
+                    <span class="glyphicon glyphicon-search"> </span>
+                    Search
+                </button>
+            </div>
+        }
+        <div class="col-sm-2 pull-right">
+            <button class="btn btn-default btn-block modal-link btn-w120" type="button"
+                    data-toggle="modal" data-target="#createModal">
+                <span class="glyphicon glyphicon-plus"> </span>
+                Create New
+            </button>
+        </div>
+    </div>
+</div>
+<div ng-app="myApp" ng-controller="userCtrl">
+    <table class="table table-hover table-bordered index-table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Role)
+                </th>
+                <th>
+                    Operation
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Roles.First(role => role.Value == item.Role.ToString()).Text)
+                    </td>
+                    <td class="container-fluid">
+                        <button class="btn btn-primary col-md-3 btn-w70"
+                                type="button"
+                                onclick="location.href='@Url.Action("Edit", "AdminUser", new { userName = item.UserName })'">
+                            Edit
+                        </button>
+                        <button class="btn btn-info  col-md-3 margin-left-10 btn-w70"
+                                type="button"
+                                onclick="location.href='@Url.Action("Detail", "AdminUser", new { userName = item.UserName })'">
+                            Details
+                        </button>
+                        <button class="btn btn-danger  col-md-3 margin-left-10 btn-w70"
+                                type="button"
+                                onclick="location.href='@Url.Action("Delete", "AdminUser", new { userName = item.UserName })'">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Modal -->
+    <div class="modal fade" id="createModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                @Html.Partial("_Create", new MvcMovie.Models.RegisterUser())
+            </div>
+        </div>
+    </div>
+</div>

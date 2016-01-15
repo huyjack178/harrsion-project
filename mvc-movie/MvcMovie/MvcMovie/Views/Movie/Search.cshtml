@@ -1,0 +1,10 @@
+﻿@model IEnumerable<MvcMovie.Models.Movie>
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@Html.Partial("_Search", Model)
+
+@Html.Partial("_Content", Model)

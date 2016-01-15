@@ -1,0 +1,40 @@
+﻿@model MvcMovie.Models.ClientUser
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<div class="modal-content">
+
+    <h1 class="modal-header">Login</h1>
+
+    @Html.AntiForgeryToken()
+
+    <fieldset class="modal-body">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserName)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.UserName, new { @class = "form-control user-name" })
+            @Html.ValidationMessageFor(model => model.UserName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div class="editor-field">
+            @Html.PasswordFor(model => model.Password, new { @class = "form-control password" })
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+        <label class="field-validation-error invalid-error"></label>
+        <div class="modal-footer pull-right">
+            <button type="button" value="Log in" class="btn btn-default  " onclick="login()">
+                Login
+            </button>
+        </div>
+    </fieldset>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+}
