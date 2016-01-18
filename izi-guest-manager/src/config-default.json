@@ -1,0 +1,6 @@
+{
+	"server": {
+		"API_PORT": "8001",
+		"API_ADDR": ""
+	}
+}
