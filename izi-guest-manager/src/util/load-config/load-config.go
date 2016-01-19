@@ -34,13 +34,11 @@ func FromFile(cfg interface{}, configPath string) error {
 	if err != nil {
 		return err
 	}
-
-	log.Println("Load config from file:", absPath)
 	data, err := ioutil.ReadFile(absPath)
 	if err != nil {
 		return err
 	}
-	log.Println(data)
+
 	err = json.Unmarshal(data, cfg)
 	if err != nil {
 		return err
