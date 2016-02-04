@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	flConfigFile = flag.String("config-file", "src/config-default.json", "Load config from file")
+	flConfigFile = flag.String("config-file", "config-default.json", "Load config from file")
 
 	log = logs.New("server")
 )

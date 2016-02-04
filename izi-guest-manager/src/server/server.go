@@ -14,6 +14,7 @@ type Config struct {
 		Port string `json:"MONGODB_PORT"`
 		Addr string `json:"MONGODB_ADDR"`
 		DBName string `json:"MONGODB_DBNAME"`
+		Collections map[string]string `json:"MONGODB_COLLECTIONS"`
 	} `json:"mongodb"`
 }
 

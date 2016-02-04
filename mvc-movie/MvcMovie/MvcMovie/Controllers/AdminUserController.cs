@@ -14,7 +14,6 @@ namespace MvcMovie.Controllers
             {
                 return RedirectToAction("Logout", "AdminUser");
             }
-
             return View();
         }
 

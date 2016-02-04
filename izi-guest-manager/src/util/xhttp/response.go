@@ -4,12 +4,25 @@ import (
 	"encoding/json"
 )
 
-func ResponseJson(w http.ResponseWriter, status int, v interface{})  {
-	data, err := json.Marshal(v)
+type Response struct {
+	StatusCode int `json:"statusCode"`
+	Message interface{} `json:"message"`
+}
+
+func NewResponse(statusCode int, message interface{}) *Response  {
+	return &Response{
+		StatusCode:statusCode,
+		Message:message,
+	}
+}
+
+func ResponseJson(w http.ResponseWriter, response *Response)  {
+	responseJS, err := json.Marshal(response)
 	if err != nil {
 		panic(err)
 	}
 
-	w.WriteHeader(status)
-	w.Write(data)
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(response.StatusCode)
+	w.Write(responseJS)
 }

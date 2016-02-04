@@ -25,7 +25,7 @@ func FromFileAndEnv(cfg interface{}, configPath string) error {
 		return err
 	}
 
-	FromEnv(cfg, "")
+	//FromEnv(cfg, "")
 	return nil
 }
 

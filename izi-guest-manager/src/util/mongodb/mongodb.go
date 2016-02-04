@@ -2,6 +2,9 @@ package mongodb
 import (
 	mgo "gopkg.in/mgo.v2"
 	"util/logs"
+	"gopkg.in/mgo.v2/bson"
+	"errors"
+	"util/message"
 )
 
 var (
@@ -12,6 +15,7 @@ type ConnectOpt struct {
 	Address string
 	Port string
 	Database string
+	Collections map[string]string
 }
 
 type Instance struct {
@@ -32,11 +36,18 @@ func NewInstance(opts ConnectOpt) (ins *Instance, err error)  {
 	return ins, nil
 }
 
-func (this *Instance) CreateCollection() error  {
-	err := this.session.DB(this.opts.Database)
-	if err != nil {
-		return err
+func (this *Instance) DB() *mgo.Database  {
+	return this.session.DB(this.opts.Database)
+}
+
+func (this* Instance) Collection(name string) *mgo.Collection {
+	return this.session.DB(this.opts.Database).C(this.opts.Collections[name])
+}
+
+func (this*Instance) CheckObjectId(id string) (bson.ObjectId, error) {
+	if !bson.IsObjectIdHex(id) {
+		return bson.NewObjectId(), errors.New(message.INVALID_ID)
 	}
 
-	return nil
+	return bson.ObjectIdHex(id), nil
 }

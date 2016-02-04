@@ -1,9 +1,12 @@
 package model
-import "time"
+import (
+	"time"
+	"gopkg.in/mgo.v2/bson"
+)
 
 type TimeStamp struct {
 	CreatedTime time.Time `json:"created_time,omitempty"`
-	UpdateTime time.Time `"json:"update_time,omitempty"`
+	UpdateTime time.Time `json:"update_time,omitempty"`
 }
 
 type Deleted struct  {
@@ -13,5 +16,5 @@ type Deleted struct  {
 type Common struct {
 	TimeStamp
 	Deleted
-	Id string `json:"id,omitempty"`
+	Id bson.ObjectId `bson:"_id,omitempty" json:"id,omitempty"`
 }

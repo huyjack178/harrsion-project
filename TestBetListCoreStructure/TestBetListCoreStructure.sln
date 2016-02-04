@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetList.Core", "BetList.Core\BetList.Core.csproj", "{D7A94838-A2A1-4C3A-85C4-FFBCC3C4767D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTML", "HTML\HTML.csproj", "{1367438D-7966-4E8F-9C3E-522A33F53CB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product", "Product\Product.csproj", "{737F204A-F5C4-425A-9909-1C900A84191F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7A94838-A2A1-4C3A-85C4-FFBCC3C4767D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7A94838-A2A1-4C3A-85C4-FFBCC3C4767D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7A94838-A2A1-4C3A-85C4-FFBCC3C4767D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7A94838-A2A1-4C3A-85C4-FFBCC3C4767D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1367438D-7966-4E8F-9C3E-522A33F53CB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1367438D-7966-4E8F-9C3E-522A33F53CB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1367438D-7966-4E8F-9C3E-522A33F53CB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1367438D-7966-4E8F-9C3E-522A33F53CB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{737F204A-F5C4-425A-9909-1C900A84191F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{737F204A-F5C4-425A-9909-1C900A84191F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{737F204A-F5C4-425A-9909-1C900A84191F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{737F204A-F5C4-425A-9909-1C900A84191F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>React.Owin</name>
+    </assembly>
+    <members>
+        <member name="T:React.Owin.BabelFileOptions">
+            <summary>
+            Options for serving JavaScript files transformed via Babel.
+            </summary>
+        </member>
+        <member name="P:React.Owin.BabelFileOptions.Extensions">
+            <summary>
+            Collection of extensions that will be handled. Defaults to ".jsx" and ".js".
+            </summary>
+        </member>
+        <member name="P:React.Owin.BabelFileOptions.StaticFileOptions">
+            <summary>
+            Options for static file middleware used to serve JavaScript files.
+            </summary>
+        </member>
+        <member name="M:React.Owin.BabelFileOptions.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:React.Owin.BabelFileOptions"/> class.
+            </summary>
+        </member>
+        <member name="T:React.Owin.BabelFileSystem">
+            <summary>
+            File system that serves transformed JavaScript files.
+            </summary>
+        </member>
+        <member name="M:React.Owin.BabelFileSystem.#ctor(React.IBabel,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new instance of the BabelFileSystem.
+            </summary>
+            <param name="transformer">Babel transformer used to compile files</param>
+            <param name="root">The root directory</param>
+            <param name="extensions">Extensions of files that will be treated as JavaScript files</param>
+        </member>
+        <member name="M:React.Owin.BabelFileSystem.#ctor(React.IBabel,Microsoft.Owin.FileSystems.IFileSystem,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new instance of the BabelFileSystem.
+            </summary>
+            <param name="transformer">Babel transformer used to compile files</param>
+            <param name="fileSystem">File system used to look up files</param>
+            <param name="extensions">Extensions of files that will be treated as JavaScript files</param>
+        </member>
+        <member name="M:React.Owin.BabelFileSystem.TryGetFileInfo(System.String,Microsoft.Owin.FileSystems.IFileInfo@)">
+            <summary>
+            Locate a JavaScript file at the given path. 
+            </summary>
+            <param name="subpath">The path that identifies the file</param>
+            <param name="fileInfo">The discovered file if any</param>
+            <returns>
+            True if a JavaScript file was located at the given path
+            </returns>
+        </member>
+        <member name="M:React.Owin.BabelFileSystem.TryGetDirectoryContents(System.String,System.Collections.Generic.IEnumerable{Microsoft.Owin.FileSystems.IFileInfo}@)">
+            <summary>
+            Enumerate a directory at the given path, if any
+            </summary>
+            <param name="subpath">The path that identifies the directory</param>
+            <param name="contents">The contents if any</param>
+            <returns>
+            True if a directory was located at the given path
+            </returns>
+        </member>
+        <member name="T:React.Owin.AssemblyRegistration">
+            <summary>
+            Handles registration of ReactJS.NET components that are only applicable
+            when used with Owin.
+            </summary>
+        </member>
+        <member name="M:React.Owin.AssemblyRegistration.Register(React.TinyIoC.TinyIoCContainer)">
+            <summary>
+            Registers components in the React IoC container
+            </summary>
+            <param name="container">Container to register components in</param>
+        </member>
+        <member name="T:React.Owin.EntryAssemblyFileSystem">
+            <summary>
+            Implements React file system that maps "~" into entry assembly location.
+            </summary>
+        </member>
+        <member name="T:React.Owin.BabelFileMiddleware">
+            <summary>
+            Enables serving static JavaScript files compiled via Babel. Wraps around StaticFileMiddleware.
+            </summary>
+        </member>
+        <member name="M:React.Owin.BabelFileMiddleware.#ctor(System.Func{System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.Tasks.Task},React.Owin.BabelFileOptions)">
+            <summary>
+            Creates a new instance of the BabelFileMiddleware.
+            </summary>
+            <param name="next">The next middleware in the pipeline.</param>
+            <param name="options">The configuration options.</param>
+        </member>
+        <member name="M:React.Owin.BabelFileMiddleware.Invoke(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Processes a request to determine if it matches a known JSX file, and if so, serves it compiled to JavaScript.
+            </summary>
+            <param name="environment">OWIN environment dictionary which stores state information about the request, response and relevant server state.</param>
+            <returns/>
+        </member>
+        <member name="M:React.Owin.BabelFileMiddleware.CreateFileMiddleware(React.IBabel)">
+            <summary>
+            Creates the internal <see cref="T:Microsoft.Owin.StaticFiles.StaticFileMiddleware"/> used to serve files.
+            </summary>
+            <param name="babel"></param>
+            <returns></returns>
+        </member>
+        <member name="T:React.Owin.BabelFileExtensions">
+            <summary>
+            Extensions for BabelFileMiddleware.
+            </summary>
+        </member>
+        <member name="M:React.Owin.BabelFileExtensions.UseBabel(Owin.IAppBuilder,React.Owin.BabelFileOptions)">
+            <summary>
+            Enables serving JavaScript files compiled via Babel.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -16,32 +16,31 @@ var log = logs.New("server")
 type setupStruct struct {
 	Config
 
-	Mongo *mongodb.Instance
+	MgoDB *mongodb.Instance
 	Handler http.Handler
 }
 
 func setup(cfg Config) *setupStruct  {
 	s := &setupStruct{Config: cfg}
-	s.setupRoutes()
 	s.setupMongo()
+	s.setupRoutes()
 	return  s
 }
 
-func (s *setupStruct) setupMongo()  {
+func (s *setupStruct) setupMongo() {
 	cfg := s.Config
 
-	mgo, err := mongodb.NewInstance(mongodb.ConnectOpt{
+	mgoIns, err := mongodb.NewInstance(mongodb.ConnectOpt{
 		Address: cfg.Mongo.Addr,
 		Database: cfg.Mongo.DBName,
+		Collections: cfg.Mongo.Collections,
 	})
 
 	if err != nil {
 		log.Println("Cannot connect DB: error ", err)
 	}
 
-	s.Mongo = mgo
-
-	mgo.CreateCollection()
+	s.MgoDB = mgoIns
 }
 
 func (s *setupStruct) setupRoutes()  {
@@ -52,11 +51,16 @@ func (s *setupStruct) setupRoutes()  {
 
 	router := httprouter.New()
 
-	guestStore := store.NewGuestStore()
+	guestStore := store.NewGuestStore(s.MgoDB)
 
 	{
 		guestCtrl := handler.NewGuestCtrl(guestStore)
 		router.GET("/guests", normal(guestCtrl.List))
+		router.GET("/guest/:id", normal(guestCtrl.Get))
+		router.POST("/guests", normal(guestCtrl.Create))
+		router.PUT("/guest/:id", normal(guestCtrl.Update))
+		router.DELETE("/guest/:id", normal(guestCtrl.Delete))
+
 	}
 
 	s.Handler = context.ClearHandler(router)

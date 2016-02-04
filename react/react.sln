@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "react-typescript", "react-typescript\react-typescript.csproj", "{D70F71D2-B3E7-4703-888E-D95084D23EFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "export-excel-ts", "export-excel-ts\export-excel-ts.csproj", "{B4D7B6AD-A3D7-4830-B94D-593F5CDE63EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetlistExcel", "BetlistExcel\BetlistExcel.csproj", "{A6C6B37F-3F0E-4194-9204-FE62D91B8751}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D70F71D2-B3E7-4703-888E-D95084D23EFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D70F71D2-B3E7-4703-888E-D95084D23EFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D70F71D2-B3E7-4703-888E-D95084D23EFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D70F71D2-B3E7-4703-888E-D95084D23EFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4D7B6AD-A3D7-4830-B94D-593F5CDE63EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4D7B6AD-A3D7-4830-B94D-593F5CDE63EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4D7B6AD-A3D7-4830-B94D-593F5CDE63EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4D7B6AD-A3D7-4830-B94D-593F5CDE63EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6C6B37F-3F0E-4194-9204-FE62D91B8751}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6C6B37F-3F0E-4194-9204-FE62D91B8751}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6C6B37F-3F0E-4194-9204-FE62D91B8751}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6C6B37F-3F0E-4194-9204-FE62D91B8751}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

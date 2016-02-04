@@ -1,8 +1,7 @@
 package model
 
-
 type Guest struct {
-	Common
+	Common `bson:",inline"`
 	FullName string `json:"fullname"`
 	Email string `json:"email"`
 	Phone string `json:"phone"`
