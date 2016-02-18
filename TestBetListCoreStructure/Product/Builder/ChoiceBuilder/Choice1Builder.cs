@@ -25,10 +25,10 @@
             return htmlRender.Render(choiceElement).ToString();
         }
 
-        public object RenderExcel(ITicket ticket, ITicketHelper ticketHelper)
+        public object RenderExcel(ITicket ticket, ITicketHelper ticketHelper, object excelHelper)
         {
             IElement choiceElement = BuildChoiceElement(ticket, ticketHelper);
-            IRender excelRender = new ExcelRender();
+            IRender excelRender = new ExcelRender(excelHelper);
 
             return excelRender.Render(choiceElement);
 

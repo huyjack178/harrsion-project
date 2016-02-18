@@ -2,6 +2,10 @@
 using BetList.Core.Entity;
 using BetList.Core.Render;
 using Excel.Helper;
+using NPOI.SS.UserModel;
+using NPOI.HSSF.Util;
+using NPOI.HSSF.UserModel;
+using System.Drawing;
 
 namespace Excel.Render
 {
@@ -9,16 +13,20 @@ namespace Excel.Render
     {
         private RTFHelper _rtfHelper;
 
-        public ExcelRender()
+        public ExcelRender(object excelHelper)
         {
-            _rtfHelper = new RTFHelper().Clone();
+            _rtfHelper = (RTFHelper)excelHelper;
         }
 
         public object Render(IElement element)
         {
+            _rtfHelper.MakeColor();
             if (!string.IsNullOrEmpty(element.Text))
             {
-                _rtfHelper.RTFRenderer.AddText(element.Text);
+                IFont format = _rtfHelper.NormalFont;
+                format.Color = 100;
+                _rtfHelper.RTFRenderer.AddText(element.Text + "\n", format);
+                
             }
 
             RenderChildren(element);

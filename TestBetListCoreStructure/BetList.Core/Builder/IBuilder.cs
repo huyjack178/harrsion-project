@@ -9,6 +9,6 @@ namespace BetList.Core.Builder
 
         string RenderHtml(ITicket ticket, ITicketHelper ticketHelper);
 
-        object RenderExcel(ITicket ticket, ITicketHelper ticketHelper);
+        object RenderExcel(ITicket ticket, ITicketHelper ticketHelper, object excelHelper);
     }
 }

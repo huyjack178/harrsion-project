@@ -38,14 +38,14 @@ namespace DemoSite.Controllers
             var builderGetter = new BetListBaseBuilderGetter();
             BaseExcelRender excelRender = new BaseExcelRender();
 
-            const short excelColumns = 7;
+            const short excelColumns = 1;
             excelRender.BuildWorksheet("BetList", excelColumns);
 
             foreach(ITicket ticket in tickets)
             {
                 var choiceBuilder = builderGetter.GetChoiceBuilder(ticket);
 
-                IRichTextString choiceString = (IRichTextString)choiceBuilder.RenderExcel(ticket, ticketHelper);
+                IRichTextString choiceString = (IRichTextString)choiceBuilder.RenderExcel(ticket, ticketHelper, excelRender.RTFHelper);
 
                 excelRender.AddCell(choiceString);
             }

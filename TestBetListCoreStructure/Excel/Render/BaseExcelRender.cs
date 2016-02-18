@@ -13,7 +13,7 @@ namespace Excel.Render
         /// <summary>
         /// The workbook.
         /// </summary>
-        private IWorkbook _workbook;
+        private HSSFWorkbook _workbook;
 
         /// <summary>
         /// The report columns number.
@@ -35,7 +35,7 @@ namespace Excel.Render
         public BaseExcelRender()
         {
             _workbook = new HSSFWorkbook();
-
+            
             _isDisposed = false;
 
             OddCellStyle = _workbook.CreateCellStyle();
@@ -53,6 +53,7 @@ namespace Excel.Render
                 NegFontCrossed = _workbook.CreateFont(),
                 NormalFontCrossed = _workbook.CreateFont(),
                 PosFontCrossed = _workbook.CreateFont(),
+                Pallete = _workbook.GetCustomPalette(),
                 RTFRenderer = new RtfTextRender()
             };
 
@@ -194,13 +195,7 @@ namespace Excel.Render
                 currentRow.HeightInPoints = totalLineBreaks * _worksheet.DefaultRowHeight;
             }
         }
-
-        public static BetListExcelBuilder AddNo(this BetListExcelBuilder factory, int index)
-        {
-            IRichTextString rtfNo = new HSSFRichTextString(index.ToString());
-            factory.AddCell(rtfNo);
-            return factory;
-        }
+    
 
         public CellAddress AddCell(IRichTextString rtfString)
         {

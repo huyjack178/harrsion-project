@@ -12,7 +12,7 @@
     {
         public IConfig Config { get; set; }
 
-        public object RenderExcel(ITicket ticket, ITicketHelper ticketHelper)
+        public object RenderExcel(ITicket ticket, ITicketHelper ticketHelper, object excelHelper)
         {
             throw new NotImplementedException();
         }

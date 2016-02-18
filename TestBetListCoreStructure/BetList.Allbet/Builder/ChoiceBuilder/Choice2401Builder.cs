@@ -33,7 +33,7 @@
             return builder.GetChoiceElementInstance(ticket, ticketHelper, baseBetTypeId);
         }
 
-        public object RenderExcel(ITicket ticket, ITicketHelper ticketHelper)
+        public object RenderExcel(ITicket ticket, ITicketHelper ticketHelper, object excelHelper)
         {
             throw new NotImplementedException();
         }
