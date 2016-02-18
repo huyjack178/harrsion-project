@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<BaseBetTypeIds>
+  <BaseBetTypeId id="1">
+    <BetTypeId id="3"></BetTypeId>
+    <BetTypeId id="4"></BetTypeId>
+    <BetTypeId id="5"></BetTypeId>
+  </BaseBetTypeId>
+</BaseBetTypeIds>
