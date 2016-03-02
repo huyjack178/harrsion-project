@@ -36,7 +36,7 @@ namespace DemoSite.Controllers
             ITicketHelper ticketHelper = new TicketHelper();
 
             var builderGetter = new BetListBaseBuilderGetter();
-            BaseExcelRender excelRender = new BaseExcelRender();
+            WorkbookExcelRender excelRender = new WorkbookExcelRender();
 
             const short excelColumns = 1;
             excelRender.BuildWorksheet("BetList", excelColumns);

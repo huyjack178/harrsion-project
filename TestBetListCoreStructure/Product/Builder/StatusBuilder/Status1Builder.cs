@@ -29,7 +29,7 @@
         {
             BetListInstanceGetter builder = new BetListInstanceGetter();
 
-            string baseBetTypeId = Config.GetBaseBetTypeId(ticket.BetTypeId.ToString());
+            string baseBetTypeId = Config.GetBaseIdById(ticket.BetTypeId.ToString());
 
             return builder.GetStatusElementInstance(ticket, ticketHelper, baseBetTypeId);
         }

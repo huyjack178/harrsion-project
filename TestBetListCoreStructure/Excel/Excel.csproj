@@ -79,11 +79,11 @@
   <ItemGroup>
     <Compile Include="Entity\CellAddress.cs" />
     <Compile Include="Helper\RTFHelper.cs" />
-    <Compile Include="Render\ExcelRender.cs" />
-    <Compile Include="Render\RtfTextRender.cs" />
+    <Compile Include="Render\BlockExcelRender.cs" />
+    <Compile Include="Helper\RtfTextRender.cs" />
     <Compile Include="Entity\TextBlock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Render\BaseExcelRender.cs" />
+    <Compile Include="Render\WorkbookExcelRender.cs" />
     <Compile Include="Util\ICellExtension.cs" />
     <Compile Include="Util\IRowExtension.cs" />
     <Compile Include="Util\StringExtension.cs" />

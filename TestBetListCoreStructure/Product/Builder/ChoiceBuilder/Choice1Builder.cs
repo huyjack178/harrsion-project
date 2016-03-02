@@ -28,7 +28,7 @@
         public object RenderExcel(ITicket ticket, ITicketHelper ticketHelper, object excelHelper)
         {
             IElement choiceElement = BuildChoiceElement(ticket, ticketHelper);
-            IRender excelRender = new ExcelRender(excelHelper);
+            IRender excelRender = new BlockExcelRender(excelHelper);
 
             return excelRender.Render(choiceElement);
 
@@ -38,7 +38,7 @@
         {
             BetListInstanceGetter builder = new BetListInstanceGetter();
 
-            string baseBetTypeId = Config.GetBaseBetTypeId(ticket.BetTypeId.ToString());
+            string baseBetTypeId = Config.GetBaseIdById(ticket.BetTypeId.ToString());
 
             return builder.GetChoiceElementInstance(ticket, ticketHelper, baseBetTypeId);
         }

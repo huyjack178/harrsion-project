@@ -67,7 +67,7 @@
     <Compile Include="Builder\BetListInstanceGetter.cs" />
     <Compile Include="Builder\BetListBaseBuilderGetter.cs" />
     <Compile Include="Builder\IBuilder.cs" />
-    <Compile Include="Config\BetTypeMappingConfig.cs" />
+    <Compile Include="Config\BetTypeParsingConfig.cs" />
     <Compile Include="Config\IConfig.cs" />
     <Compile Include="Entity\Element.cs" />
     <Compile Include="Entity\IElement.cs" />

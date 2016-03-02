@@ -1,0 +1,508 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B0838D04-2306-4362-AF22-9FCD0BE6F8E7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fanex.BetList.Core</RootNamespace>
+    <AssemblyName>Fanex.BetList.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IBCFile">
+      <HintPath>..\packages\Fanex.File.1.0.0\lib\net40\IBCFile.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\packages\NPOI.2.0.6\lib\net40\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="RemotingRef, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RemotingRef.1.0.0.3\lib\net40\RemotingRef.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SPSRemoting">
+      <HintPath>..\packages\SPSRemoting.1.0.0\lib\net40\SPSRemoting.dll</HintPath>
+    </Reference>
+    <Reference Include="Sunplus.Core.Common">
+      <HintPath>..\packages\Sunplus.Core.Common.1.1.4505.19054\lib\net40\Sunplus.Core.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Web" />
+    <Reference Include="TplCore">
+      <HintPath>..\packages\TplCore.1.0.4694.29951\lib\net40\TplCore.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CodeAnalysis\CodeAnalysisConfiguration.xml" />
+    <Content Include="Styles\CoreBetList.css" />
+    <Content Include="Styles\Images\1F.gif" />
+    <Content Include="Styles\Images\1L.gif" />
+    <Content Include="Styles\Images\firstGoal.gif" />
+    <Content Include="Styles\Images\lastGoal.gif" />
+    <Content Include="Templates\SystemParlayDetail.htm" />
+    <Content Include="Templates\Status.htm" />
+    <Content Include="Templates\Stake.htm" />
+    <Content Include="Templates\Odds.htm" />
+    <Content Include="Templates\Resources\BetList.css" />
+    <Content Include="Templates\Resources\Images\bgHeader.jpg" />
+    <Content Include="Templates\Trans.htm" />
+    <EmbeddedResource Include="App_GlobalResources\CoreBetList.ja-JP.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CoreBetList.ja-JP.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\CoreBetList.ko-KR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CoreBetList.ko-KR.designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\CoreBetList.th-TH.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CoreBetList.th-TH.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\CoreBetList.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CoreBetList.vi-VN.designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\CoreBetList.zh-CN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CoreBetList.zh-CN.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\CoreBetList.zh-Hans.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CoreBetList.zh-Hans.designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\CoreBetList.zh-TW.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CoreBetList.zh-TW.designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\Resources\Images\firstGoal.gif" />
+    <EmbeddedResource Include="Templates\Resources\Images\lastGoal.gif" />
+    <Content Include="Templates\Choice.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\CoreBetList.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoreBetList.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\CoreBetList.ja-JP.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoreBetList.ja-JP.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\CoreBetList.ko-KR.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoreBetList.ko-KR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\CoreBetList.th-TH.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoreBetList.th-TH.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\CoreBetList.vi-VN.designer.cs">
+      <DependentUpon>CoreBetList.vi-VN.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="App_GlobalResources\CoreBetList.zh-CN.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoreBetList.zh-CN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\CoreBetList.zh-Hans.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoreBetList.zh-Hans.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\CoreBetList.zh-TW.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoreBetList.zh-TW.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Builder\BetListBaseBuilder.cs" />
+    <Compile Include="Builder\BetListExcelBuilder.cs" />
+    <Compile Include="Builder\BetListHTMLBuilder.cs" />
+    <Compile Include="Builder\ChoiceBuilder\3rd\Choice_22006.cs" />
+    <Compile Include="Builder\ChoiceBuilder\BaseChoiceBuilder.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice10.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1001.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1002.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice12.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1203.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1204.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1205.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1206.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice121.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice122.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1224.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice123.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice124.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice125.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice128.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice131.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice13.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice130.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1301.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1302.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1303.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1304.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1305.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1306.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1307.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1308.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1309.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1310.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1311.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice132.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1312.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1313.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1314.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1315.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1316.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1317.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1318.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1319.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1320.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1321.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1322.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1323.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1324.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1325.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1326.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1327.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1328.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1329.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice133.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1330.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1331.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1332.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1333.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice1334.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice134.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice136.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice138.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice139.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice14.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice140.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice141.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice142.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice143.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice144.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice15.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice151.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice152.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice153.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice154.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice155.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice156.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice157.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice159.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice16.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice160.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice161.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice162.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice163.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice164.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice165.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice166.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice167.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice168.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice169.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice170.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice171.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice19.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice2.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice20.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice21.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice23001.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice23002.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice23101.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice23201.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice23202.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice24.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice25.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice26.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice27.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice28.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice29.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice3.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice30.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice4.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice401.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice402.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice403.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice404.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice405.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice406.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice407.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice408.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice409.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice410.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice411.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice412.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice413.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice414.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice5.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice6.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice7.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice8.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice9.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice126.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice127.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice135.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice145.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice146.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice147.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice148.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice149.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice150.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice129.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice137.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice172.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice173.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice174.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice175.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice176.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice177.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice178.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice179.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice180.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice181.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice182.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice183.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice184.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice185.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice186.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice187.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice188.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice189.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice190.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice191.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice192.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice193.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice194.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice195.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice196.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice197.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice198.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice199.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice200.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice201.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice202.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice203.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice204.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice205.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice206.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice207.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice208.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice209.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice210.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice211.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice212.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice213.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice214.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice215.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice216.cs" />
+    <Compile Include="Builder\ChoiceBuilder\SportsBook\Choice217.cs" />
+    <Compile Include="Builder\ChoiceBuilder\IChoice.cs" />
+    <Compile Include="Builder\IBetListBuilder.cs" />
+    <Compile Include="Builder\OddsBuilder\3rd\Odds_22006.cs" />
+    <Compile Include="Builder\OddsBuilder\BaseOddsBuilder.cs" />
+    <Compile Include="Builder\OddsBuilder\IOdds.cs" />
+    <Compile Include="Builder\OddsBuilder\SportsBook\Odds1.cs" />
+    <Compile Include="Builder\OddsBuilder\SportsBook\Odds29.cs" />
+    <Compile Include="Builder\StakeBuilder\3rd\Stake_22006.cs" />
+    <Compile Include="Builder\StakeBuilder\IStake.cs" />
+    <Compile Include="Builder\StakeBuilder\SportsBook\Stake1.cs" />
+    <Compile Include="Builder\StakeBuilder\SportsBook\Stake29.cs" />
+    <Compile Include="Builder\StatusBuilder\3rd\Status_22006.cs" />
+    <Compile Include="Builder\StatusBuilder\BaseStatusBuilder.cs" />
+    <Compile Include="Builder\StatusBuilder\IStatus.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status10.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1001.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1002.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1311.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1312.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1313.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1314.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1315.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1316.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1317.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1318.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1319.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1320.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1321.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1322.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1323.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1324.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1325.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1326.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1327.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1328.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1329.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1330.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1331.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1332.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1333.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status1334.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status154.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status155.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status156.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status23001.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status23002.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status23003.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status23101.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status29.cs" />
+    <Compile Include="Builder\StatusBuilder\SportsBook\Status9.cs" />
+    <Compile Include="Builder\SystemParlayBuilder\ISystemParlayDetail.cs" />
+    <Compile Include="Builder\SystemParlayBuilder\SystemParlayDetail.cs" />
+    <Compile Include="Builder\TransBuilder\3rd\Trans_22006.cs" />
+    <Compile Include="Builder\TransBuilder\BaseTransBuilder.cs" />
+    <Compile Include="Builder\TransBuilder\ITrans.cs" />
+    <Compile Include="Builder\TransBuilder\SportsBook\Trans1.cs" />
+    <Compile Include="Constants\BetTeamValue.cs" />
+    <Compile Include="Constants\BetTypeId.cs" />
+    <Compile Include="Constants\HtmlCharacters.cs" />
+    <Compile Include="Entities\BetStatus.cs" />
+    <Compile Include="Entities\CellAddress.cs" />
+    <Compile Include="Entities\SystemParlayData.cs" />
+    <Compile Include="Entities\ISystemParlayData.cs" />
+    <Compile Include="Entities\SystemParlaySerial.cs" />
+    <Compile Include="Entities\ISystemParlaySerial.cs" />
+    <Compile Include="Entities\SystemParlayTicket.cs" />
+    <Compile Include="Entities\ISystemParlayTicket.cs" />
+    <Compile Include="Entities\ITicket.cs" />
+    <Compile Include="Entities\ITicketData.cs" />
+    <Compile Include="Entities\ITicketHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\RTFHelper.cs" />
+    <Compile Include="Entities\TextBlock.cs" />
+    <Compile Include="Entities\Ticket.cs" />
+    <Compile Include="Entities\TicketData.cs" />
+    <Compile Include="Factories\BetListExcelFactory.cs" />
+    <Compile Include="Factories\BetListHTMLFactory.cs" />
+    <Compile Include="Factories\IBetListFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Templates\Choice.htm.cs" />
+    <Compile Include="Templates\Odds.htm.cs" />
+    <Compile Include="Templates\Stake.htm.cs" />
+    <Compile Include="Templates\Status.htm.cs" />
+    <Compile Include="Templates\SystemParlayDetail.htm.cs" />
+    <Compile Include="Templates\Trans.htm.cs" />
+    <Compile Include="TicketHelper\CacheRef.cs" />
+    <Compile Include="TicketHelper\TicketHelper.cs" />
+    <Compile Include="Utils\Cast.cs" />
+    <Compile Include="Utils\ConvertByBetType.cs" />
+    <Compile Include="Utils\Formatter.cs" />
+    <Compile Include="Utils\NPOIExt\ICellExtension.cs" />
+    <Compile Include="Utils\NPOIExt\IRowExtension.cs" />
+    <Compile Include="Utils\RTFNumber.cs" />
+    <Compile Include="Utils\RtfTextRender.cs" />
+    <Compile Include="Utils\StringExt\StringExtension.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\CoreBetList.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CoreBetList.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CoreBetList.cd" />
+    <Content Include="packages.config" />
+    <Content Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51802</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -2,12 +2,12 @@
 {
     using BetList.Core.Entity;
     using BetList.Core.Render;
-    using HTML;
+    using Helper;
     using System.Web.UI;
 
     public class HtmlRender : IRender
     {
-        private HtmlHelper _htmlHelper = null;
+        private IHtmlHelper _htmlHelper = null;
 
         public HtmlRender()
         {
@@ -34,18 +34,18 @@
         private void RenderAttribute(IElement element)
         {
             ////Render class attribute
-            _htmlHelper.HtmlWriter.AddAttribute(HtmlTextWriterAttribute.Class, element.Name);
+            _htmlHelper.AddAtribute(HtmlTextWriterAttribute.Class.ToString(), element.Name);
         }
 
         private void RenderBeginTag(IElement element)
         {
             if (element.IsBlock)
             {
-                _htmlHelper.HtmlWriter.RenderBeginTag(HtmlTextWriterTag.Div);
+                _htmlHelper.BeginTag(HtmlTextWriterTag.Div.ToString());
             }
             else
             {
-                _htmlHelper.HtmlWriter.RenderBeginTag(HtmlTextWriterTag.Span);
+                _htmlHelper.BeginTag(HtmlTextWriterTag.Span.ToString());
             }
         }
 
@@ -53,13 +53,13 @@
         {
             foreach (var style in element.Formats)
             {
-                _htmlHelper.HtmlWriter.AddStyleAttribute(style.Key, style.Value);
+                _htmlHelper.AddStyle(style.Key, style.Value);
             }
         }
 
         private void RenderText(IElement element)
         {
-            _htmlHelper.HtmlWriter.Write(element.Text);
+            _htmlHelper.AddText(element.Text);
         }
 
         private void RenderChildren(IElement element)
@@ -77,7 +77,7 @@
 
         private void RenderEndTag()
         {
-            _htmlHelper.HtmlWriter.RenderEndTag();
+            _htmlHelper.EndTag();
         }
     }
 }

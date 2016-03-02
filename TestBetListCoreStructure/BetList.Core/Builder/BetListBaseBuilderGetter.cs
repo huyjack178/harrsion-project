@@ -5,19 +5,19 @@
 
     public class BetListBaseBuilderGetter
     {
-        private BetTypeMappingConfig _config = null;
+        private BetTypeParsingConfig _config = null;
 
         public BetListBaseBuilderGetter()
         {
-            _config = new BetTypeMappingConfig();
-            _config.LoadConfigFileAndMap("D:\\project\\harrsion-project\\TestBetListCoreStructure\\BetList.Core\\Config\\config.xml");
+            _config = new BetTypeParsingConfig();
+            _config.LoadConfigFileAndParseToDictionary("D:\\project\\harrsion-project\\TestBetListCoreStructure\\BetList.Core\\Config\\config.xml");
         }
 
         public IBuilder GetChoiceBuilder(ITicket ticket)
         {
             BetListInstanceGetter instanceGetter = new BetListInstanceGetter();
 
-            string baseBuilderId = _config.GetBaseBetTypeId(ticket.BetTypeId.ToString());
+            string baseBuilderId = _config.GetBaseIdById(ticket.BetTypeId.ToString());
 
             IBuilder choiceBuilder = instanceGetter.GetChoiceBuilderInstance(baseBuilderId);
 
@@ -30,7 +30,7 @@
         {
             BetListInstanceGetter instanceGetter = new BetListInstanceGetter();
 
-            string baseBuilderId = _config.GetBaseBetTypeId(ticket.BetTypeId.ToString());
+            string baseBuilderId = _config.GetBaseIdById(ticket.BetTypeId.ToString());
 
             IBuilder statusBuilder = instanceGetter.GetStatusBuilderInstance(baseBuilderId);
 

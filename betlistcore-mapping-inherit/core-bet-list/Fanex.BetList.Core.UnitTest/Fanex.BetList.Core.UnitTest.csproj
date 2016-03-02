@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{879AB95E-FB73-4F65-BD8A-7E4F579BCFDB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fanex.BetList.Core.UnitTest</RootNamespace>
+    <AssemblyName>Fanex.BetList.Core.UnitTest</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.0.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\Fanex.BetList.Core\DLL\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\packages\NSubstitute.1.7.2.0\lib\NET40\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TplCore, Version=1.0.4694.29951, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TplCore.1.0.4694.29951\lib\net40\TplCore.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Builder\BetListBaseBuilderTest.cs" />
+    <Compile Include="Builder\ChoiceBuilder\3rd\Choice_22006Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice128Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice1301Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice1303Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice1305Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice1306Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice1308Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice1312Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice1316Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice1317Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice1318Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice131Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice1324Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice133Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice143Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice140Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice13Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice152Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice154Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice155Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice156Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice159Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice160Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice161Test.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Builder\ChoiceBuilder\Choice163Test.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Builder\ChoiceBuilder\Choice165Test.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Builder\ChoiceBuilder\Choice167Test.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Builder\ChoiceBuilder\Choice169Test.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Builder\ChoiceBuilder\Choice1701Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice1702Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice1703Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice170Test.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Builder\ChoiceBuilder\Choice171Test.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Builder\ChoiceBuilder\Choice172Test.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Builder\ChoiceBuilder\Choice175Test.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Builder\ChoiceBuilder\Choice176Test.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Builder\ChoiceBuilder\Choice177Test.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Builder\ChoiceBuilder\Choice178Test.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Builder\ChoiceBuilder\Choice179Test.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Builder\ChoiceBuilder\Choice186Test.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Builder\ChoiceBuilder\Choice187Test.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Builder\ChoiceBuilder\Choice411Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice195Test.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Builder\ChoiceBuilder\Choice199Test.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Builder\ChoiceBuilder\Choice1Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice200Test.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Builder\ChoiceBuilder\Choice206Test.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Builder\ChoiceBuilder\Choice20Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice210Test.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Builder\ChoiceBuilder\Choice216Test.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Builder\ChoiceBuilder\Choice3Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice401Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice405Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice406Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice407Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice408Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice410Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice412Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice413Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice414Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice10Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice151Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice2Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice121Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice122Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice123Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice126Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice1304Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice1311Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice1302Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice16Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice15Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice14Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice1307Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice1313Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice1314Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice1315Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice1328Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice1333Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice1334Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice23001Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice23002Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice23101Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice23201Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice23202Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice24Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice25Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice27Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice26Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice6Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice5Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice4Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice30Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice28Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice1309Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice29Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice9Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice129Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice130Test.cs" />
+    <Compile Include="Builder\ChoiceBuilder\Choice136Test.cs" />
+    <Compile Include="Builder\OddsBuilder\Odds29Test.cs" />
+    <Compile Include="Builder\OddsBuilder\Odds1Test.cs" />
+    <Compile Include="Builder\StakeBuilder\Stake29Test.cs" />
+    <Compile Include="Builder\StakeBuilder\Stake1Test.cs" />
+    <Compile Include="Builder\StatusBuilder\3rd\Status_22006Test.cs" />
+    <Compile Include="Builder\StatusBuilder\Status9Test.cs" />
+    <Compile Include="Builder\StatusBuilder\Status154Test.cs" />
+    <Compile Include="Builder\StatusBuilder\Status1233Test.cs" />
+    <Compile Include="Builder\StatusBuilder\Status10Test.cs" />
+    <Compile Include="Builder\StatusBuilder\Status1Test.cs" />
+    <Compile Include="Builder\TransBuilder\Trans1Test.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stubs\TicketHelperStub.cs" />
+    <Compile Include="Common\Enums\BetTypes.cs" />
+    <Compile Include="Common\TestData.cs" />
+    <Compile Include="Templates\Choice\Choice_BetType_BlockTest.cs" />
+    <Compile Include="Templates\Choice\Choice_Handicap_BlockTest.cs" />
+    <Compile Include="Templates\Choice\Choice_League_LeagueName_BlockTest.cs" />
+    <Compile Include="Templates\Choice\Choice_League_BlockTest.cs" />
+    <Compile Include="Templates\Choice\Choice_Match_BlockTest.cs" />
+    <Compile Include="Templates\Choice\Choice_Match_VS_BlockTest.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Templates\Choice\Choice_Handicap_Odds_BlockTest.cs" />
+    <Compile Include="Templates\Choice\Choice_Score_BlockTest.cs" />
+    <Compile Include="Templates\Choice\Choice_ScoreMapIcon_BlockTest.cs" />
+    <Compile Include="Templates\Choice\Choice_OddMixParlay_BlockTest.cs" />
+    <Compile Include="Templates\Choice\Choice_TemplateTest.cs" />
+    <Compile Include="Templates\Odds\Odds_TemplateTest.cs" />
+    <Compile Include="Templates\Stake\Stake_TemplateTest.cs" />
+    <Compile Include="Templates\Status\Status_ShowIP_BlockTest.cs" />
+    <Compile Include="Templates\Status\Status_StatusResult_BlockTest.cs" />
+    <Compile Include="Templates\Status\Status_TemplateTest.cs" />
+    <Compile Include="Templates\SystemParlayDetail\SystemParlayDetail_TotalContents_BlockTest.cs" />
+    <Compile Include="Templates\SystemParlayDetail\SystemParlayDetail_TemplateTest.cs" />
+    <Compile Include="Templates\SystemParlayDetail\SystemParlayDetail_SubTotalContents_BlockTest.cs" />
+    <Compile Include="Templates\SystemParlayDetail\SystemParlayDetail_Outstanding_BlockTest.cs" />
+    <Compile Include="Templates\SystemParlayDetail\SystemParlayDetail_Contents_WinlossDate_BlockTest.cs" />
+    <Compile Include="Templates\SystemParlayDetail\SystemParlayDetail_Contents_PlayerCommission_BlockTest.cs" />
+    <Compile Include="Templates\SystemParlayDetail\SystemParlayDetail_Contents_Match_BlockTest.cs" />
+    <Compile Include="Templates\SystemParlayDetail\SystemParlayDetail_Contents_BlockTest.cs" />
+    <Compile Include="Templates\Trans\Trans_TransTime_BlockTest.cs" />
+    <Compile Include="Templates\Trans\Trans_TemplateTest.cs" />
+    <Compile Include="Utils\CastTest.cs" />
+    <Compile Include="Utils\ConvertByBetTypeTest.cs" />
+    <Compile Include="Utils\NPOIExt\ICellExtensionTest.cs" />
+    <Compile Include="Utils\NPOIExt\IRowExtensionTest.cs" />
+    <Compile Include="Utils\StringExt\StringExtensionTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="runopencover.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="runtests.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fanex.BetList.Core\Fanex.BetList.Core.csproj">
+      <Project>{B0838D04-2306-4362-AF22-9FCD0BE6F8E7}</Project>
+      <Name>Fanex.BetList.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fanex.BetList.GoldDeluxe\Fanex.BetList.GoldDeluxe.csproj">
+      <Project>{9b786951-7d5c-42c4-a9df-ec558bc44593}</Project>
+      <Name>Fanex.BetList.GoldDeluxe</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CodeAnalysis\CodeAnalysisConfiguration.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
