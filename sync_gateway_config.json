@@ -10,7 +10,7 @@
   	},
 	"databases": {
 		"auth": {
-			"server": "http://0.0.0.0:8091",
+			"server": "http://localhost:8091",
 			"bucket": "auth",
 			"users": {
 				"GUEST": {
@@ -20,7 +20,7 @@
 			}
 		},
 		"sync_data": {
-			"server": "http://0.0.0.0:8091",
+			"server": "http://localhost:8091",
 			"bucket": "sync_data",
 			"users": {
 				"GUEST": {
