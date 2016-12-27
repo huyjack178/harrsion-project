@@ -10,7 +10,7 @@
   	},
 	"databases": {
 		"auth": {
-			"server": "walrus:",
+			"server": "172.18.0.2:",
 			"bucket": "auth",
 			"users": {
 				"GUEST": {
@@ -20,7 +20,7 @@
 			}
 		},
 		"sync_data": {
-			"server": "walrus:",
+			"server": "172.18.0.2:",
 			"bucket": "sync_data",
 			"users": {
 				"GUEST": {
