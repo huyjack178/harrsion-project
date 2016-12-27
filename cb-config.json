@@ -1,0 +1,33 @@
+{
+	"log": ["HTTP+"],
+	"adminInterface": "localhost:4985",
+  	"interface": ":4984",
+  	"CORS": {
+  		"Origin":["http://localhost:8000"],
+  		"LoginOrigin":["http://localhost:8000"],
+   	 	"Headers":["Content-Type"],
+   	 	"MaxAge": 1728000
+  	},
+	"databases": {
+		"auth": {
+			"server": "http://172.17.0.2:8091",
+			"bucket": "auth",
+			"users": {
+				"GUEST": {
+					"disabled": true,
+					"admin_channels": ["public"] 
+				}
+			}
+		},
+		"sync_data": {
+			"server": "http://172.17.0.2:8091",
+			"bucket": "sync_data",
+			"users": {
+				"GUEST": {
+					"disabled": true,
+					"admin_channels": ["public"]
+				}
+			}
+		}
+	}
+}
