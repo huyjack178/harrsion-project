@@ -10,7 +10,7 @@
   	},
 	"databases": {
 		"auth": {
-			"server": "http://localhost:8091",
+			"server": "walrus:",
 			"bucket": "auth",
 			"users": {
 				"GUEST": {
@@ -20,7 +20,7 @@
 			}
 		},
 		"sync_data": {
-			"server": "http://localhost:8091",
+			"server": "walrus:",
 			"bucket": "sync_data",
 			"users": {
 				"GUEST": {
